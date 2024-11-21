@@ -4,8 +4,10 @@ CCFLAGS := -Werror -Wextra -Wall -std=c++98
 
 SRC := main.cpp \
 	Animal.cpp \
+	WrongAnimal.cpp \
 	Dog.cpp \
 	Cat.cpp \
+	WrongCat.cpp \
 
 OBJ := $(SRC:.cpp=.o)
 
