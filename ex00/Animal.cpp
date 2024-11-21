@@ -6,28 +6,36 @@
 /*   By: adprzyby <adprzyby@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 15:42:38 by adprzyby          #+#    #+#             */
-/*   Updated: 2024/11/18 16:29:18 by adprzyby         ###   ########.fr       */
+/*   Updated: 2024/11/21 12:34:56 by adprzyby         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
 
-Animal::Animal(std::string type) : type(type) {
-	std::cout << "Animal " << type << " has been created" << std::endl;
-}
-
-Animal::Animal(Animal& other) {
-	
+Animal::Animal() : type("Animal") {
+    std::cout << "Animal created." << std::endl;
 }
 
 Animal::~Animal() {
-	std::cout << "The animal has left the server" << std::endl;
+    std::cout << "Animal destroyed." << std::endl;
 }
 
-void Animal::makeSound() {
-	std::cout << "Animal sound" << std::endl;
+Animal::Animal(const Animal& other) : type(other.type) {
+    std::cout << "Animal copied." << std::endl;
 }
 
-std::string Animal::getType() {
-	return type;
+Animal& Animal::operator=(const Animal& other) {
+    if (this != &other) {
+        type = other.type;
+    }
+    std::cout << "Animal assigned." << std::endl;
+    return *this;
+}
+
+void Animal::makeSound() const {
+    std::cout << "Animal sound!" << std::endl;
+}
+
+std::string Animal::getType() const {
+    return type;
 }
