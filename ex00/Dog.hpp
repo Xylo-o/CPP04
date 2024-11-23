@@ -6,7 +6,7 @@
 /*   By: adprzyby <adprzyby@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 15:53:58 by adprzyby          #+#    #+#             */
-/*   Updated: 2024/11/21 12:28:28 by adprzyby         ###   ########.fr       */
+/*   Updated: 2024/11/23 20:28:12 by adprzyby         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,5 +15,10 @@
 
 class Dog : public Animal {
 	public:
-		void makeSound();
+    	Dog();
+    	virtual ~Dog();
+    	Dog(const Dog& other);
+    	Dog& operator=(const Dog& other);
+		
+    	virtual void makeSound() const;
 };

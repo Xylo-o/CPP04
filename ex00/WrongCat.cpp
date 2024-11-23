@@ -6,8 +6,33 @@
 /*   By: adprzyby <adprzyby@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 12:31:37 by adprzyby          #+#    #+#             */
-/*   Updated: 2024/11/21 12:31:55 by adprzyby         ###   ########.fr       */
+/*   Updated: 2024/11/23 20:41:42 by adprzyby         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "WrongCat.hpp"
+
+WrongCat::WrongCat() {
+    type = "WrongCat";
+    std::cout << "WrongCat created." << std::endl;
+}
+
+WrongCat::WrongCat(const WrongCat& other) {
+	std::cout << "WrongCat copied." << std::endl;
+}
+
+WrongCat& WrongCat::operator=(const WrongCat& other) {
+	if (this != &other) {
+		type = other.type;
+	}
+	std::cout << "WrongCat assigned." << std::endl;
+	return *this;
+}
+
+WrongCat::~WrongCat() {
+    std::cout << "WrongCat destroyed." << std::endl;
+}
+
+void WrongCat::makeSound() const {
+    std::cout << "Wrong meow!" << std::endl;
+}

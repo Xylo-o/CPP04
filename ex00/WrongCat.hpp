@@ -6,7 +6,7 @@
 /*   By: adprzyby <adprzyby@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 12:31:40 by adprzyby          #+#    #+#             */
-/*   Updated: 2024/11/21 13:50:04 by adprzyby         ###   ########.fr       */
+/*   Updated: 2024/11/23 20:37:32 by adprzyby         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,5 +15,10 @@
 
 class WrongCat : public WrongAnimal {
 	public:
-		void makeSound();
+    	WrongCat();
+    	virtual ~WrongCat();
+    	WrongCat(const WrongCat& other);
+    	WrongCat& operator=(const WrongCat& other);
+
+    	virtual void makeSound() const;
 };
