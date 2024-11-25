@@ -6,7 +6,7 @@
 /*   By: adprzyby <adprzyby@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/25 17:34:24 by adprzyby          #+#    #+#             */
-/*   Updated: 2024/11/25 21:17:04 by adprzyby         ###   ########.fr       */
+/*   Updated: 2024/11/25 21:25:10 by adprzyby         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@
 class AAnimal {
 protected:
     std::string type;
-
 public:
     AAnimal();
     virtual ~AAnimal();
