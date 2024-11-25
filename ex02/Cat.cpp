@@ -6,7 +6,7 @@
 /*   By: adprzyby <adprzyby@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/23 22:29:35 by adprzyby          #+#    #+#             */
-/*   Updated: 2024/11/25 16:19:23 by adprzyby         ###   ########.fr       */
+/*   Updated: 2024/11/25 21:10:36 by adprzyby         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ Cat::Cat(const Cat& other) {
 
 Cat& Cat::operator=(const Cat& other) {
     if (this != &other) {
-        Animal::operator=(other);
+        AAnimal::operator=(other);
 		delete brain;
 		brain = new Brain(*other.brain);
     }

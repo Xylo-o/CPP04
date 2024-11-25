@@ -6,7 +6,7 @@
 /*   By: adprzyby <adprzyby@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/23 22:29:48 by adprzyby          #+#    #+#             */
-/*   Updated: 2024/11/25 15:40:36 by adprzyby         ###   ########.fr       */
+/*   Updated: 2024/11/25 21:11:16 by adprzyby         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,14 @@ Dog::Dog() : brain(new Brain()) {
     std::cout << GREEN << "Dog created." << RESET << std::endl;
 }
 
-Dog::Dog(const Dog& other) : Animal(other) {
+Dog::Dog(const Dog& other) : AAnimal(other) {
 	brain = new Brain(*other.brain);
 	std::cout << YELLOW << "Dog coppied" << RESET << std::endl;
 }
 
 Dog& Dog::operator=(const Dog& other) {
 	if (this != &other) {
-		Animal::operator=(other);
+		AAnimal::operator=(other);
 		delete brain;
 		brain = new Brain(*other.brain);
 	}
