@@ -1,4 +1,4 @@
-NAME := poly
+NAME := brain
 CC := c++
 CCFLAGS := -Werror -Wextra -Wall -std=c++98
 
@@ -8,6 +8,7 @@ SRC := main.cpp \
 	Dog.cpp \
 	Cat.cpp \
 	WrongCat.cpp \
+	Brain.cpp \
 
 OBJ := $(SRC:.cpp=.o)
 

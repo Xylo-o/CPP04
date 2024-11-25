@@ -6,34 +6,35 @@
 /*   By: adprzyby <adprzyby@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/23 22:29:17 by adprzyby          #+#    #+#             */
-/*   Updated: 2024/11/23 22:29:21 by adprzyby         ###   ########.fr       */
+/*   Updated: 2024/11/25 15:36:57 by adprzyby         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
+#include "Colors.hpp"
 
 Animal::Animal() : type("Animal") {
-    std::cout << "Animal created." << std::endl;
+    std::cout << GREEN << "Animal created." << RESET << std::endl;
 }
 
 Animal::~Animal() {
-    std::cout << "Animal destroyed." << std::endl;
+    std::cout << RED << "Animal destroyed." << RESET << std::endl;
 }
 
 Animal::Animal(const Animal& other) : type(other.type) {
-    std::cout << "Animal copied." << std::endl;
+    std::cout << YELLOW << "Animal copied." << RESET << std::endl;
 }
 
 Animal& Animal::operator=(const Animal& other) {
     if (this != &other) {
         type = other.type;
     }
-    std::cout << "Animal assigned." << std::endl;
+    std::cout << BLUE << "Animal assigned." << RESET << std::endl;
     return *this;
 }
 
 void Animal::makeSound() const {
-    std::cout << "Animal sound!" << std::endl;
+    std::cout << MAGENTA << "Animal sound!" << RESET << std::endl;
 }
 
 std::string Animal::getType() const {

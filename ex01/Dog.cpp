@@ -6,20 +6,22 @@
 /*   By: adprzyby <adprzyby@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/23 22:29:48 by adprzyby          #+#    #+#             */
-/*   Updated: 2024/11/24 21:56:46 by adprzyby         ###   ########.fr       */
+/*   Updated: 2024/11/25 15:40:36 by adprzyby         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Dog.hpp"
+#include "Brain.hpp"
+#include "Colors.hpp"
 
 Dog::Dog() : brain(new Brain()) {
     type = "Dog";
-    std::cout << "Dog created." << std::endl;
+    std::cout << GREEN << "Dog created." << RESET << std::endl;
 }
 
 Dog::Dog(const Dog& other) : Animal(other) {
 	brain = new Brain(*other.brain);
-	std::cout << "Dog coppied" << std::endl;
+	std::cout << YELLOW << "Dog coppied" << RESET << std::endl;
 }
 
 Dog& Dog::operator=(const Dog& other) {
@@ -27,19 +29,18 @@ Dog& Dog::operator=(const Dog& other) {
 		Animal::operator=(other);
 		delete brain;
 		brain = new Brain(*other.brain);
-		type = other.type;
 	}
-	std::cout << "Dog assigned." << std::endl;
+	std::cout << BLUE << "Dog assigned." << RESET << std::endl;
 	return *this;
 }
 
 Dog::~Dog() {
 	delete brain;
-    std::cout << "Dog destroyed." << std::endl;
+    std::cout << RED << "Dog destroyed." << RESET << std::endl;
 }
 
 void Dog::makeSound() const {
-	std::cout << "The dog goes Barrrk" << std::endl;
+	std::cout << MAGENTA << "The dog goes Barrrk" << RESET << std::endl;
 }
 
 Brain* Dog::getBrain() const {

@@ -6,25 +6,26 @@
 /*   By: adprzyby <adprzyby@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/23 22:28:26 by adprzyby          #+#    #+#             */
-/*   Updated: 2024/11/24 21:49:57 by adprzyby         ###   ########.fr       */
+/*   Updated: 2024/11/25 15:35:43 by adprzyby         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Brain.hpp"
+#include "Colors.hpp"
 
 Brain::Brain() {
-    std::cout << "Brain created." << std::endl;
+    std::cout << GREEN << "Brain created." << RESET << std::endl;
     for (int i = 0; i < 100; ++i) {
         ideas[i] = "Empty idea";
     }
 }
 
 Brain::~Brain() {
-    std::cout << "Brain destroyed." << std::endl;
+    std::cout << RED << "Brain destroyed." << RESET << std::endl;
 }
 
 Brain::Brain(const Brain& other) {
-    std::cout << "Brain copied." << std::endl;
+    std::cout << YELLOW << "Brain copied." << RESET << std::endl;
     for (int i = 0; i < 100; ++i) {
         ideas[i] = other.ideas[i];
     }
@@ -32,7 +33,7 @@ Brain::Brain(const Brain& other) {
 
 Brain& Brain::operator=(const Brain& other) {
     if (this != &other) {
-        std::cout << "Brain assigned." << std::endl;
+        std::cout << BLUE << "Brain assigned." << RESET << std::endl;
         for (int i = 0; i < 100; ++i) {
             ideas[i] = other.ideas[i];
         }

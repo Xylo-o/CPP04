@@ -6,7 +6,7 @@
 /*   By: adprzyby <adprzyby@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/23 22:30:03 by adprzyby          #+#    #+#             */
-/*   Updated: 2024/11/23 22:30:04 by adprzyby         ###   ########.fr       */
+/*   Updated: 2024/11/25 15:32:06 by adprzyby         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,31 +15,34 @@
 #include "Cat.hpp"
 #include "WrongAnimal.hpp"
 #include "WrongCat.hpp"
+#include "Colors.hpp"
 
 int main() {
-    const Animal* meta = new Animal();
-    const Animal* dog = new Dog();
-    const Animal* cat = new Cat();
+    const Animal* j = new Dog();
+    const Animal* i = new Cat();
+    delete j;
+    delete i;
+    const Animal* animals[10];
 
-    std::cout << dog->getType() << " " << std::endl;
-    std::cout << cat->getType() << " " << std::endl;
+    for (int index = 0; index < 10; ++index) {
+        if (index < 5) {
+            animals[index] = new Dog();
+        } else {
+            animals[index] = new Cat();
+        }
+    }
+    for (int index = 0; index < 10; ++index) {
+        delete animals[index];
+    }
 
-    cat->makeSound();
-    dog->makeSound();
-    meta->makeSound();
+    Dog originalDog;
+    originalDog.getBrain()->setIdea(0, "Original idea");
 
-    delete meta;
-    delete dog;
-    delete cat;
+    Dog copiedDog = originalDog;
+    copiedDog.getBrain()->setIdea(0, "Copied idea");
 
-    const WrongAnimal* wrongMeta = new WrongAnimal();
-    const WrongAnimal* wrongCat = new WrongCat();
-
-    wrongCat->makeSound();
-    wrongMeta->makeSound();
-
-    delete wrongMeta;
-    delete wrongCat;
+    std::cout << CYAN << "Original Dog Brain Idea 0: " << originalDog.getBrain()->getIdea(0) << RESET << std::endl;
+    std::cout << CYAN << "Copied Dog Brain Idea 0: " << copiedDog.getBrain()->getIdea(0) << RESET << std::endl;
 
     return 0;
 }
